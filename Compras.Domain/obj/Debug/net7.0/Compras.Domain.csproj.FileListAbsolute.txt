@@ -1,0 +1,12 @@
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\bin\Debug\net7.0\Compras.Domain.deps.json
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\bin\Debug\net7.0\Compras.Domain.dll
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\bin\Debug\net7.0\Compras.Domain.pdb
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.csproj.AssemblyReference.cache
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.AssemblyInfoInputs.cache
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.AssemblyInfo.cs
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.csproj.CoreCompileInputs.cache
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.dll
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\refint\Compras.Domain.dll
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\Compras.Domain.pdb
+D:\Csharp is gonna make me rich\Sistema Compras\SistemaCompras\Compras.Domain\obj\Debug\net7.0\ref\Compras.Domain.dll
