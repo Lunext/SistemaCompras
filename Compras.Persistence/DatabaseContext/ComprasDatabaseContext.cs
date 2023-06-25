@@ -18,10 +18,19 @@ public class ComprasDatabaseContext : DbContext
     public DbSet<MeasureUnit> MeasureUnits { get; set; }
     public DbSet<Supplier> Suppliers { get; set; }
     public DbSet<Article> Articles { get; set; }
+    public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+        {
+            relationship.DeleteBehavior = DeleteBehavior.Restrict;
+        }
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ComprasDatabaseContext).Assembly); 
+        
+        
+          
         base.OnModelCreating(modelBuilder);
     }
 
@@ -37,6 +46,8 @@ public class ComprasDatabaseContext : DbContext
             {
                 entry.Entity.DateCreated = DateTime.Now; 
             }
+
+
 
         }
         return base.SaveChangesAsync(cancellationToken);

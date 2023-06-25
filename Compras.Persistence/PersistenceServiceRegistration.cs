@@ -18,11 +18,12 @@ public static class PersistenceServiceRegistration
         });
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
         services.AddScoped<IMeasureUnitRepository, MeasureUnitRepository>();
         services.AddScoped<ISupplierRepository, SupplierRepository>(); 
         services.AddScoped<IArticleRepository, ArticleRepository>();
-        return services; 
+        services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
+        return services;
     }
+
 }

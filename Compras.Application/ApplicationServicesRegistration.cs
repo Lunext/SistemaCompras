@@ -15,8 +15,9 @@ public static class ApplicationServicesRegistration
             options.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
         });
         return services; 
-
     }
+
+
 
 
 }

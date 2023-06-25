@@ -44,7 +44,7 @@ namespace Compras.API.Controllers
             return CreatedAtAction(nameof(Get), new { id = response }); 
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]

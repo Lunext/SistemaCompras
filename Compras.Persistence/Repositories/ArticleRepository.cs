@@ -1,4 +1,5 @@
-﻿using Compras.Application.Contracts.Persistence;
+﻿using Azure.Core;
+using Compras.Application.Contracts.Persistence;
 using Compras.Domain.Domains;
 using Compras.Persistence.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ public class ArticleRepository : GenericRepository<Article>, IArticleRepository
     public async Task<Article> GetArticleWithDetails(int id)
     {
         var article = await context.Articles
-            .Include(q => q.MeasureUnitId)
+            .Include(q => q.MeasureUnit)
             .FirstOrDefaultAsync(q => q.Id == id);
 
         return article!; 

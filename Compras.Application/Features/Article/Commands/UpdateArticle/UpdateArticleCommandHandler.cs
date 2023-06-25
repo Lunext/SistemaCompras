@@ -17,7 +17,7 @@ public class UpdateArticleCommandHandler : IRequestHandler<UpdateArticleCommand,
 
     public async Task<Unit> Handle(UpdateArticleCommand request, CancellationToken cancellationToken)
     {
-        var articleToUpdate = await articleRepository.GetByIdAsync(request.Id);
+        var articleToUpdate =  mapper.Map<Domain.Domains.Article>(request); 
 
         await articleRepository.UpdateAsync(articleToUpdate);
 
