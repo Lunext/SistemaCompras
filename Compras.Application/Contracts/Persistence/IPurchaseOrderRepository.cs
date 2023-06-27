@@ -10,6 +10,9 @@ public interface IPurchaseOrderRepository: IGenericRepository<PurchaseOrder>
 
     Task<List<PurchaseOrder>> GetPurchaseOrdersByItsAvailability(bool isAvailable);
 
-    Task<List<PurchaseOrder>> GetPurchaseOrdersFilteredByDate(DateTime firstDate, DateTime lasDate); 
+    Task<List<PurchaseOrder>> GetPurchaseOrdersFilteredByDate(DateTime firstDate, DateTime lasDate);
+
+    Task<List<PurchaseOrder>> GetPurchaseOrdersByUnitCost(decimal firstCost, decimal lastCost); 
+
 
 }

@@ -12,6 +12,21 @@ public class PurchaseOrderRepository : GenericRepository<PurchaseOrder>, IPurcha
         
     }
 
+    public async Task CreateAsync(PurchaseOrder entity)
+    {
+        entity.Total = entity.UnitCost * entity.Amount;
+        await context.AddAsync(entity);
+        
+        await context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(PurchaseOrder entity)
+    {
+        entity.Total=entity.UnitCost * entity.Amount;
+        context.Entry(entity).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+    }
+
     public async Task<List<PurchaseOrder>> GetPurchaseOrdersByItsAvailability(bool isAvailable)
     {
         var purchaseOrders = await context.PurchaseOrders
@@ -21,6 +36,17 @@ public class PurchaseOrderRepository : GenericRepository<PurchaseOrder>, IPurcha
             .ToListAsync(); 
 
         return purchaseOrders;
+    }
+
+    public async Task<List<PurchaseOrder>> GetPurchaseOrdersByUnitCost(decimal firstCost, decimal lastCost)
+    {
+       var purchaseOrdersFilteredByCost = await context.PurchaseOrders
+            .Include(q => q.MeasureUnit)
+            .Include(q => q.Article)
+            .Where(x=> x.UnitCost>= firstCost && x.UnitCost<= lastCost)
+            .ToListAsync();
+
+        return purchaseOrdersFilteredByCost;
     }
 
     public async Task<List<PurchaseOrder>> GetPurchaseOrdersFilteredByDate(DateTime firstDate, DateTime lasDate)
@@ -54,6 +80,8 @@ public class PurchaseOrderRepository : GenericRepository<PurchaseOrder>, IPurcha
 
         return purchaseOrder!; 
     }
+
+   
 
 
 }

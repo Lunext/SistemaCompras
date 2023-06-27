@@ -3,6 +3,7 @@ using Compras.Application.Features.PurchaseOrder.Commands.DeletePurchaseOrder;
 using Compras.Application.Features.PurchaseOrder.Commands.UpdatePurchaseOrder;
 using Compras.Application.Features.PurchaseOrder.Queries.GetAllPurchaseOrders;
 using Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersByItsAvailability;
+using Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersFilteredByCost;
 using Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersFilteredByDate;
 using Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersWithDetails;
 using MediatR;
@@ -45,6 +46,13 @@ namespace Compras.API.Controllers
             return purchaseOrdersFiltered;
         }
 
+        [HttpGet("filtered-by-cost")]
+        public async Task<List<PurchaseOrderByCostDto>> GetByCosts(decimal firstCost, decimal lastCost)
+        {
+            var purchaseOrdersByCost= await mediator.Send(new GetPurchaseOrdersFilteredByCostQuery(firstCost, lastCost));
+            return purchaseOrdersByCost; 
+        }
+    
         [HttpGet("{id}")]
         public async Task<ActionResult<PurchaseOrderDetailsDto>> Get (int id)
         {

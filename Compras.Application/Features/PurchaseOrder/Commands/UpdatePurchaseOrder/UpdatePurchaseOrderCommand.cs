@@ -8,6 +8,7 @@ namespace Compras.Application.Features.PurchaseOrder.Commands.UpdatePurchaseOrde
 public class UpdatePurchaseOrderCommand : BasePurchaseOrder, IRequest<Unit>
 {
     public int Id { get; set; }
+    
 
 }
 
