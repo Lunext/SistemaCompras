@@ -7,5 +7,6 @@ namespace Compras.Application.Features.PurchaseOrder.Queries.GetAllPurchaseOrder
 public class PurchaseOrderDto: BasePurchaseOrder
 {
     public int Id { get; set; }
+    public decimal Total { get; set; }
 
 }

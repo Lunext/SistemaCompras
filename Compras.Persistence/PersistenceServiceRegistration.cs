@@ -14,6 +14,7 @@ public static class PersistenceServiceRegistration
     {
         services.AddDbContext<ComprasDatabaseContext>(options =>
         {
+            
             options.UseSqlServer(configuration.GetConnectionString("ComprasDatabaseConnectionString"));
         });
 
@@ -23,6 +24,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<ISupplierRepository, SupplierRepository>(); 
         services.AddScoped<IArticleRepository, ArticleRepository>();
         services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
+        services.AddScoped<IAccountingEntryRepository, AccountingEntryRepository>();    
         return services;
     }
 

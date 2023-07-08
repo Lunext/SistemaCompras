@@ -15,6 +15,6 @@
         public decimal UnitCost { get; set; }
 
         public int Amount { get; set; }
-        public decimal Total { get; set; }
+      
     }
 }

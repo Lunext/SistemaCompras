@@ -6,6 +6,7 @@ namespace Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersFi
 public class PurchaseOrdersFilteredByDateDto:BasePurchaseOrder
 {
     public int Id { get; set;}
+    public decimal Total { get; set; }
 }
 
 

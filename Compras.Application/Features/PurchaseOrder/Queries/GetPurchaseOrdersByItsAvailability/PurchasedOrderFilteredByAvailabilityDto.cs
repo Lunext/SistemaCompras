@@ -5,4 +5,5 @@ namespace Compras.Application.Features.PurchaseOrder.Queries.GetPurchaseOrdersBy
 public class PurchasedOrderFilteredByAvailabilityDto:BasePurchaseOrder
 {
     public int Id { get; set;}
+    public decimal Total { get; set; }
 }

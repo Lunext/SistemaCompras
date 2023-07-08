@@ -1,6 +1,8 @@
 using Compras.API.Middlewares;
 using Compras.Application;
 using Compras.Persistence;
+using Compras.Persistence.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +27,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -40,5 +45,22 @@ app.UseAuthorization();
 app.UseCors("all");
 
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+
+var services = scope.ServiceProvider;
+
+try
+{
+    var context = services.GetRequiredService<ComprasDatabaseContext>();
+    context.Database.Migrate(); 
+
+}
+catch (Exception ex)
+{
+
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An error ocurred during migration"); 
+}
 
 app.Run();

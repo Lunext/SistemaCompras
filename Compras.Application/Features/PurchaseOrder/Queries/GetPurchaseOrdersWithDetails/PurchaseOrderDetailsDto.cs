@@ -10,6 +10,8 @@ public class PurchaseOrderDetailsDto: BasePurchaseOrder
 
     public DateTime? DateModified { get; set;}
 
+    public decimal Total { get; set; }
+
 }
 
 

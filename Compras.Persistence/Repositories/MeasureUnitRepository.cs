@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Compras.Persistence.Repositories
+namespace Compras.Persistence.Repositories;
+
+public class MeasureUnitRepository : GenericRepository<MeasureUnit>, IMeasureUnitRepository
 {
-    internal class MeasureUnitRepository : GenericRepository<MeasureUnit>, IMeasureUnitRepository
+    public MeasureUnitRepository(ComprasDatabaseContext context) : base(context)
     {
-        public MeasureUnitRepository(ComprasDatabaseContext context) : base(context)
-        {
-        }
     }
 }
